@@ -34,7 +34,7 @@ jobs :
             id: push
             uses: docker/build-push-action@v6
             with:
-              context: .
+              context: ./API-jokes
               file: ./API-jokes/Dockerfile.prod
               push: true
               tags: ${{ steps.meta.outputs.tags }}
