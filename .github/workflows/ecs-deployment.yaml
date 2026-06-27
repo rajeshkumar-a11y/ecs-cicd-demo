@@ -18,7 +18,7 @@ jobs :
           - name: Log in to Docker Hub
             uses: docker/login-action@v3
             with:
-              username: ${{ secrets.DOCKER_USERNAME }}
+              username: ${{ env.NODE_IMAGE_NAME  }}
               password: ${{ secrets.DOCKER_PASSWORD }}
 
           - name: Add Details to image
