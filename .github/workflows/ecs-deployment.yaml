@@ -18,14 +18,14 @@ jobs :
           - name: Log in to Docker Hub
             uses: docker/login-action@v3
             with:
-              username: ${{ secrets.DOCKER_USERNAME }}
+              username: ${{ vars.DOCKER_USERNAME }}
               password: ${{ secrets.DOCKER_PASSWORD }}
 
           - name: Add Details to image
             id: meta
             uses: docker/metadata-action@v5
             with:
-              images: ${{ secrets.DOCKER_USERNAME }}/${{ env.NODE_IMAGE_NAME }}
+              images: ${{ vars.DOCKER_USERNAME }}/${{ env.NODE_IMAGE_NAME }}
               tags: |
                 latest
                 v1.0.${{github.run.number}}
